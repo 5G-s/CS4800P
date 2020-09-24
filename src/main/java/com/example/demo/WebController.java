@@ -17,6 +17,7 @@ public class WebController {
 	
 	public static void main(String args[]) {
 		callingTime();
+		parseLink();
 	}
 
 	public static void callingTime() {
@@ -26,6 +27,32 @@ public class WebController {
 		System.out.println("Today's Time is: " + time);
 
 	}
+	
+	public static void parseLink() {
+        	Document doc;
+        	try {
+
+			// need http protocol
+			doc = Jsoup.connect("https://www.brewtrail.com/california-breweries/").userAgent("Mozilla").get();
+
+			// get page title
+			String title = doc.title();
+			System.out.println("title : " + title);
+
+			// get all links
+			Elements links = doc.select("a[href]");
+			for (Element link : links) {
+
+				// get the value from href attribute
+				System.out.println("\nlink : " + link.attr("href"));
+				System.out.println("text : " + link.text());
+
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    	}
 
    @GetMapping("/hello")
     public String sayHello(@RequestParam(value = "myName", defaultValue = "World") String name) {
