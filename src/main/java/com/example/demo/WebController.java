@@ -29,22 +29,23 @@ public class WebController {
         	Document doc;
         	try {
 
-			// need http protocol
-			doc = Jsoup.connect("https://www.brewtrail.com/california-breweries/").userAgent("Mozilla").get();
+		    // need http protocol
+		    doc = Jsoup.connect("https://www.brewtrail.com/california-breweries/").userAgent("Mozilla").get();
 
-			// get page title
-			String title = doc.title();
-			System.out.println("title : " + title);
+		    // get page title
+		    String title = doc.title();
+		    //System.out.println("title : " + title);
 
-			// get all links
-			Elements links = doc.select("a[href]");
-			for (Element link : links) {
+		    // get all links
+		    Elements links = doc.select("a[href]");
+		    for (Element link : links) {
 
-				// get the value from href attribute
-				System.out.println("\nlink : " + link.attr("href"));
-				System.out.println("text : " + link.text());
+			// get the value from href attribute
+			//return link.attr("href");
+			//return link.text();
 
-			}
+		    }
+		    return title;
 
 		} catch (IOException e) {
 			e.printStackTrace();
