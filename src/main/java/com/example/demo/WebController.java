@@ -5,18 +5,27 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication
-@RestController
+//joda time
+import org.joda.time.LocalDate;
+import org.joda.time.LocalDateTime;
+import org.joda.time.LocalTime;
+
+
+//@SpringBootApplication
+//@RestController
 public class WebController {
+	
+	public static void main(String args[]) {
+		LocalDate date = LocalDate.now();
+		System.out.println(date); 
+		LocalTime time = LocalTime.now();
+		System.out.println(time);
+	}
 
-
-    public static void main(String[] args) {
-        SpringApplication.run(WebController.class, args);
-    }
-
-    @GetMapping("/hello")
+   @GetMapping("/hello")
     public String sayHello(@RequestParam(value = "myName", defaultValue = "World") String name) {
         return String.format("Hello %s!", name);
     }
+
 
 }
