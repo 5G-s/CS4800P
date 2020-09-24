@@ -16,10 +16,15 @@ import org.joda.time.LocalTime;
 public class WebController {
 	
 	public static void main(String args[]) {
+		callingTime();
+	}
+
+	public static void callingTime() {
 		LocalDate date = LocalDate.now();
-		System.out.println(date); 
 		LocalTime time = LocalTime.now();
-		System.out.println(time);
+		System.out.println("Today's Date is: " + date);
+		System.out.println("Today's Time is: " + time);
+
 	}
 
    @GetMapping("/hello")
