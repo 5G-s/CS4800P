@@ -24,6 +24,7 @@ public class WebController {
 	public static void main(String args[]) {
 		SpringApplication.run(WebController.class, args);
 	}
+	@GetMapping(/"beer")
 	public static void parseLink() {
         	Document doc;
         	try {
