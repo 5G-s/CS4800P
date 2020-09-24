@@ -6,9 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 //joda time
-import org.joda.time.LocalDate;
-import org.joda.time.LocalDateTime;
-import org.joda.time.LocalTime;
+import java.time.*;
 
 //Jsoup HTML Parse & Print
 import org.jsoup.Jsoup;
@@ -24,18 +22,8 @@ import java.io.IOException;
 public class WebController {
 	
 	public static void main(String args[]) {
-		callingTime();
-		parseLink();
+		SpringApplication.run(WebController.class, args);
 	}
-
-	public static void callingTime() {
-		LocalDate date = LocalDate.now();
-		LocalTime time = LocalTime.now();
-		System.out.println("Today's Date is: " + date);
-		System.out.println("Today's Time is: " + time);
-
-	}
-	
 	public static void parseLink() {
         	Document doc;
         	try {
@@ -65,6 +53,12 @@ public class WebController {
    @GetMapping("/hello")
     public String sayHello(@RequestParam(value = "myName", defaultValue = "World") String name) {
         return String.format("Hello %s!", name);
+    }
+	
+   @GetMapping("/date")
+    public LocalDate date() {
+        LocalDate date = LocalDate.now();
+        return date;
     }
 
 
