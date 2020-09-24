@@ -1,6 +1,8 @@
 package com.example.demo;
 
-import com.github.ankurpathak.username.bean.constraints.*;
+import com.google.i18n.phonenumbers.NumberParseException;
+import com.google.i18n.phonenumbers.PhoneNumberUtil;
+import com.google.i18n.phonenumbers.Phonenumber.PhoneNumber;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,10 +11,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
+
+
 @SpringBootApplication
 @RestController
 public class WebController {
-
 
     public static void main(String[] args) {
 
@@ -20,19 +23,30 @@ public class WebController {
     }
 
     @GetMapping("/hello")
-    public String sayHello(@RequestParam(value = "myName", defaultValue = "World") String name) {
-        return String.format("Hello %s!", name);
+    public String sayHello(@RequestParam(value = "myName") String name) {
+        return  phoneRegion(name);
     }
 
 
 
 //    StartWithAlphabet to check if username start with alphabet
-    private String verifyName() {
-        @StartWithAlphabet
+    private String phoneRegion(String user) {
+        PhoneNumber swissNumberProto = null;
+        boolean real;
 
-        String users = null;
-        return users;
-
+        PhoneNumberUtil phoneUtil = PhoneNumberUtil.getInstance();
+        
+        try {
+            swissNumberProto = phoneUtil.parse(user, "US");
+        } catch (NumberParseException e) {
+            System.err.println("NumberParseException was thrown: " + e.toString());
+        }
+        real = phoneUtil.isValidNumber(swissNumberProto);
+        if(!real){
+            return "Not a local number";
+        }
+        return "Number is Local";
     }
+
 
 }
