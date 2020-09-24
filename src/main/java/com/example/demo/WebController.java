@@ -17,14 +17,14 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 
 
-//@SpringBootApplication
-//@RestController
+@SpringBootApplication
+@RestController
 public class WebController {
 	
 	public static void main(String args[]) {
 		SpringApplication.run(WebController.class, args);
 	}
-	@GetMapping(/"beer")
+	@GetMapping("/beer")
 	public static void parseLink() {
         	Document doc;
         	try {
@@ -57,9 +57,9 @@ public class WebController {
     }
 	
    @GetMapping("/date")
-    public LocalDate date() {
+    public String date() {
         LocalDate date = LocalDate.now();
-        return date;
+        return date.toString();
     }
 
 
