@@ -19,6 +19,8 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
+import java.lang.Math;
+
 
 @SpringBootApplication
 @RestController
@@ -81,6 +83,11 @@ public class WebController {
             return "Not a local number";
         }
         return "Number is Local";
+    }
+    @GetMapping("/distance")
+    public static double area(@RequestParam int distance) {
+        double area = distance * Math.pow(3.14, 2);
+        return area;
     }
 
 }
