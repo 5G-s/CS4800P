@@ -19,6 +19,8 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
+import java.lang.Math;
+
 
 @SpringBootApplication
 @RestController
@@ -28,6 +30,10 @@ public class WebController {
         SpringApplication.run(WebController.class, args);
     }
     @GetMapping("/beer")
+    public static double area(@RequestParam int distance) {
+        return distance * Math.pow(3.14, 2);
+
+    }
     public static void parseLink() {
         Document doc;
         try {
