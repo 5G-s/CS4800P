@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="en" xmlns:form="http://www.w3.org/1999/xhtml">
+
 <head>
     <link rel="stylesheet" href="style.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -12,25 +14,21 @@
 </div>
 
 
-
 <div class="team">
+
+    <!Links to returning user page>
     <div class="person">
-        <form action="/distance" method="GET" id="distanceForm">
-            <div>
-                <label for="distanceField">How far are you willing to drive? <br> Enter Distance(Miles):</label>
-                <input name="myDistance" id="distanceField">
-                <button>Find beer near me!</button>
-            </div>
-        </form>
+        <h3>Click to Log in</h3>
+        <input type="button" value="Log In" onclick="window.location.href='LogIn.html';"/>
     </div>
+
+    <!Links to new user page>
     <div class="person">
-        <h3>Sign up</h3>
-        <button>Enter</button>
+        <h3>Click to Sign up</h3>
+        <input type="button" value="Sign Up" onclick="window.location.href='SignUp.html';"/>
     </div>
-    <div class="person">
-        <h3>Sign in</h3>
-        <button>Enter</button>
-    </div>
+
+    <!Links to date >
     <div class="person">
         <h3>Minutes to happy hour...</h3>
         <form action="/date" method="GET">
@@ -38,16 +36,8 @@
                 <button>Go!</button>
             </div>
         </form>
-
     </div>
 </div>
 
-<form action="/hello" method="GET" id="nameForm">
-    <div>
-        <label for="nameField">Please enter your email.</label>
-        <input name="myName" id="nameField">
-        <button>Enter</button>
-    </div>
-</form>
 </body>
 </html>

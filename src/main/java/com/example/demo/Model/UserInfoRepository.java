@@ -1,4 +1,6 @@
-package com.example.demo.Repository;
+package com.example.demo.Model;
 
-public class UserInfoRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface UserInfoRepository extends CrudRepository<UserInfo,Integer> {
 }

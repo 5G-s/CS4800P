@@ -1,16 +1,39 @@
-<%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
-<html>
+<!DOCTYPE html>
+
+<html lang="en" xmlns:form="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+
 <head>
-    <title>Spring MVC Form Handling</title>
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Sign Up </title>
 </head>
+    <div class="head">
+        <h1>Enter information below to sign up for a free account</h1>
+    </div>
 <body>
-<label for="uname"><b>Username</b></label>
-<input type="text" placeholder="Enter Username" name="uname" required>
 
-<label for="psw"><b>Password</b></label>
-<input type="password" placeholder="Enter Password" name="psw" required>
+<form action="#" th:action="@{/save}" th:object="${UserInfo}" method="POST">
 
-<button type="submit">Login</button>
+    <table>
+        <tr>
+            <td>User Name:</td>
+            <td><input type="text" th:field="*{userName}" /></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="text" th:field="*{email}" /></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="text" th:field="*{password}" /></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Save</button> </td>
+        </tr>
+    </table>
+
+</form>
 
 </body>
 </html>
