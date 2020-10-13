@@ -15,6 +15,7 @@
 
 <body>
 <! Still need to connect to backend>
+<table>
     <tr>
         <td>User Name:</td>
         <td><input type="text" th:field="*{userName}" /></td>
@@ -23,6 +24,10 @@
         <td>Password:</td>
         <td><input type="text" th:field="*{password}" /></td>
     </tr>
+    <tr>
+        <td><input type="button" value="Log In" onclick="window.location.href='Map.html';"/> </td>
+    </tr>
+</table>
 
 </body>
 </html>
