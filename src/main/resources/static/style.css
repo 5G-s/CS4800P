@@ -6,37 +6,55 @@ body {
 
 .head h1{
     display: flex;
+    font-size: 75px;
     align-items: center;
-    justify-content: center;
-    color: DarkGoldenRod
+    justify-content: start;
+    font-family: Helvetica;
+    color: red;
+    position: relative;
+    left:10px;
 }
 .head h2{
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    position: relative;
+    top:-200px;
+    font-family: Helvetica;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 35px;
+    color: white;
 }
 
 .team {
+    position: relative;
+    left:90px;
+    top:-175px;
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .person{
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 175px;
     background: rgba(0, 0, 100, 0.1);
     padding: 20px;
     text-align: center;
     margin: auto;
     margin-top: 2%;
-    color: black;
+    color: red;
     margin-bottom: 1%;
     margin-left: 5px;
     margin-right: 5px;
 }
 
 .h3 {
+    color: red;
     font-size: 20px;
     letter-spacing: 1px;
-    font-weight: 100;}
+    font-weight: 100;
+}
