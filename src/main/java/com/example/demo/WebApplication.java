@@ -15,7 +15,7 @@ import java.time.*;
 
 //Jsoup HTML Parse & Print
 
-import java.lang.Math;
+
 @SpringBootApplication
 @RestController
 public class WebApplication extends HttpServlet {
