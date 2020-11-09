@@ -30,10 +30,10 @@ public class WebApplication extends HttpServlet {
         LocalDate date = LocalDate.now();
         return date.toString();
     }
-    public static double area(int radius) {
-        double area = (Math.PI)*Math.pow(radius, 2);
-        return area;
-    }
+//    public static double area(int radius) {
+//        double area = (Math.PI)*Math.pow(radius, 2);
+//        return area;
+//    }
 
 
 }
