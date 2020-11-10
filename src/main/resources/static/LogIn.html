@@ -4,7 +4,7 @@
       xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Login.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Log In </title>
 </head>
@@ -14,13 +14,14 @@
 </div>
 
 <body>
-< <form name="LoginForm" method="post" action="LoginServlet">
-    Username: <input type="text" name="username"/> <br/>
-    or
-    Email: <input type="text" name="email"/> <br/>
-    Password: <input type="password" name="password"/> <br/>
-    <input type="submit" value="Login" />
+<div class="login">
+    <h1>Login</h1>
+ <form name="LoginForm" method="post" action="LoginServlet">
+     <input type="text" name="email" placeholder="Email" required="required" />
+     <input type="password" name="password" placeholder="Password" required="required" />
+     <button type="submit" class="btn btn-primary btn-block btn-large">Login.</button>
 </form>
+</div>
 
 </body>
 </html>
