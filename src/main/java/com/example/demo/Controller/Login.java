@@ -18,14 +18,14 @@ import java.io.IOException;
 
 
 @RestController
-@WebServlet("/SignUpServlet")
-public class SignUp extends HttpServlet {
+@WebServlet("/LoginServlet")
+public class Login extends HttpServlet {
 
     @Autowired
     private UserServices userServices;
 
     protected void doPost(HttpServletRequest request,
-                           HttpServletResponse response) throws ServletException, IOException {
+                          HttpServletResponse response) throws ServletException, IOException {
 
         //User Variables
         String username = request.getParameter("username");
@@ -33,10 +33,6 @@ public class SignUp extends HttpServlet {
         String password = request.getParameter("password");
         // code to process the form...
 
-        //Check entered username against database to ensure no duplicate usernames
-
-
     }
-
 
 }

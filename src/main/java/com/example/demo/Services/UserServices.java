@@ -20,8 +20,8 @@ public class UserServices {
         return this.userDao.getAllUsers();
     }
 
-    public UserInfo getUserById(int id){
-        return this.userDao.getUserbyId(id);
+    public UserInfo getUser(String email){
+        return this.userDao.getUser(email);
     }
 
 

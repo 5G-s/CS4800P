@@ -8,7 +8,7 @@ public interface UserDao {
 
     Collection<UserInfo> getAllUsers();
 
-    UserInfo getUserbyId(int id);
+    UserInfo getUser(String email);
 
     void removeUserById(int id);
 
