@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collection;
+import java.util.List;
 
 @Repository("godrink")
 //@Qualifier("godrink")
@@ -34,14 +35,28 @@ public class UserInfoDao implements UserDao{
 
     @Override
     public Collection<UserInfo> getAllUsers() {
-        return null;
+        final String sql = "SELECT username, email, password FROM UserInfo";
+        List<UserInfo> userInfoList = jdbc.query(sql, new UserRowMapper());
+        return userInfoList;
     }
 
     @Override
-    public UserInfo getUser(String email) {
+    public UserInfo getUserEmail(String email) {
        final String sql = "SELECT username,email,password FROM UserInfo WHERE email =?";
        UserInfo user = jdbc.queryForObject(sql, new UserRowMapper(),email);
        return user;
+    }
+    @Override
+    public UserInfo getUserName(String username) {
+        final String sql = "SELECT username,email,password FROM UserInfo WHERE email =?";
+        UserInfo user = jdbc.queryForObject(sql, new UserRowMapper(),username);
+        return user;
+    }
+    @Override
+    public UserInfo getUserPassword(String password) {
+        final String sql = "SELECT username,email,password FROM UserInfo WHERE email =?";
+        UserInfo user = jdbc.queryForObject(sql, new UserRowMapper(),password);
+        return user;
     }
 
     @Override

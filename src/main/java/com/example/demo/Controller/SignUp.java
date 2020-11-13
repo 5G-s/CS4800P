@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Iterator;
 
 
 @RestController
@@ -31,11 +33,20 @@ public class SignUp extends HttpServlet {
         String username = request.getParameter("username");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        UserInfo user = new UserInfo(username,email,password);
         // code to process the form...
 
-        //Check entered username against database to ensure no duplicate usernames
-
-
+        //Check for no duplicate usernames or emails before adding
+        if(userServices.getUserName(username).toString().equals(user.getUserName())){
+            //Implement request to use different username here//jsut refresh page for now
+            return;
+        }
+        else if(userServices.getUserEmail(email).toString().equals(user.getEmail())){
+            //Account already created with that email, redirect to login page
+            response.sendRedirect("Login.html");
+        }
+        //insert user info to database
+        userServices.insertUser(user);
     }
 
 

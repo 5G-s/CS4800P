@@ -20,14 +20,19 @@ public class UserServices {
         return this.userDao.getAllUsers();
     }
 
-    public UserInfo getUser(String email){
-        return this.userDao.getUser(email);
+    public UserInfo getUserEmail(String email){
+        return this.userDao.getUserEmail(email);
+    }
+
+    public UserInfo getUserName(String username){
+        return this.userDao.getUserName(username);
+    }
+    public UserInfo getUserPassword(String password){
+        return this.userDao.getUserName(password);
     }
 
 
-    public void removeUserById(int id) {
-        this.userDao.removeUserById(id);
-    }
+    //public void removeUserById(int id) { this.userDao.removeUserById(id); }
 
     public void updateUser(UserInfo userInfo){
         this.userDao.updateUser(userInfo);

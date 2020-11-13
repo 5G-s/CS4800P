@@ -32,6 +32,29 @@ public class Login extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         // code to process the form...
+        UserInfo userByEmail = userServices.getUserEmail(email);
+        UserInfo userByName = userServices.getUserName(username);
+
+        //check email first then username
+        if( userByEmail.getEmail().equals(email) ){
+            //found account by email check password
+            if(userByEmail.getPassword().equals(password)){
+                //login verified redirect to another html
+                response.sendRedirect("Map.html");
+            }
+        }
+        else if (userByName.getUserName().equals(username)) {
+            //Found account by username check password
+            if(userByEmail.getPassword().equals(password)){
+                //login verified redirect to another html
+                response.sendRedirect("Map.html");
+            }
+        }
+        //if email or username dont match refresh page
+        response.sendRedirect("Login.html");
+
+
+
 
     }
 

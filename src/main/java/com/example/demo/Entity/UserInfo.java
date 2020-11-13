@@ -14,7 +14,7 @@ public class UserInfo {
 
     public UserInfo(){}
 
-    public UserInfo(Long id,String userName,String email,String password){
+    public UserInfo(String userName,String email,String password){
         super();
 
         this.userName = userName;
