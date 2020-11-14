@@ -1,10 +1,5 @@
 package com.example.demo.Entity;
 
-import javax.persistence.*;
-import java.io.Serializable;
-
-
-
 public class UserInfo {
 
 
