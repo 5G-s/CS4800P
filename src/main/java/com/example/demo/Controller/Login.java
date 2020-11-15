@@ -40,14 +40,14 @@ public class Login extends HttpServlet {
             //found account by email check password
             if(userByEmail.getPassword().equals(password)){
                 //login verified redirect to another html
-                response.sendRedirect("Map.html");
+                response.sendRedirect("main.html");
             }
         }
         else if (userByName.getUserName().equals(username)) {
             //Found account by username check password
             if(userByEmail.getPassword().equals(password)){
                 //login verified redirect to another html
-                response.sendRedirect("Map.html");
+                response.sendRedirect("main.html");
             }
         }
         //if email or username dont match refresh page

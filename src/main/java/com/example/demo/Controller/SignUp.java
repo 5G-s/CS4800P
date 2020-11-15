@@ -47,6 +47,7 @@ public class SignUp extends HttpServlet {
         }
         //insert user info to database
         userServices.insertUser(user);
+        response.sendRedirect("main.html");
     }
 
 
