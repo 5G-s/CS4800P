@@ -20,6 +20,10 @@
     right: 0;
     background-color: black;
 }
+/* Displays Map */
+#map {
+    height: 500px;
+}
 
 /* If you want the content centered horizontally and vertically */
 .centered {
