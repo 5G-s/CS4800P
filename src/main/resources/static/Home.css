@@ -12,8 +12,7 @@
 /* Control the left side */
 .left {
     left: 0;
-    background: url("https://cdn.vox-cdn.com/thumbor/2L1SipaSV6XLyWuDpyufvP9CQBY=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/19626572/PrettyRickey_SpilledMilk_149.jpg");
-    background-size: cover;
+    background-color: blanchedalmond;
 }
 
 /* Control the right side */

@@ -7,11 +7,13 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 .wrapper {
-    width: 1170px;
-    margin: auto;
+    margin: 0 auto;
 }
 header {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(https://images.unsplash.com/photo-1543007630-9710e4a00a20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(background.jpg);
+    background-color: #cccccc;
+    overflow-x: hidden;
+    /*transform: scale(1.1); */
     height: 100vh;
     -webkit-background-size: cover;
     background-size: cover;
@@ -43,7 +45,7 @@ header {
 }
 .logo img {
     width: 100%;
-    padding: 15px 0;
+    padding: 15px 0px;
 }
 .welcome-text {
     position: absolute;
@@ -53,12 +55,18 @@ header {
     text-align: center;
 }
 .welcome-text h1 {
+    font-family: 'Impact', fantasy;
     text-align: center;
     color: #fff;
     text-transform: uppercase;
     font-size: 60px;
 }
-.welcome-text h1 span {
+.welcome-text h2 span {
+    font-family: 'Impact', fantasy;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 60px;
     color: #0000ff;
 }
 .welcome-text a {
@@ -74,6 +82,9 @@ header {
 .welcome-text a:hover {
     background: #fff;
     color: #333;
+}
+.aboutUs-text p {
+    font-family: 'Palatino', serif;
 }
 
 <!-- End Main Page -->
