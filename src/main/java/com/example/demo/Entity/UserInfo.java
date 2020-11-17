@@ -1,6 +1,14 @@
 package com.example.demo.Entity;
 
+import org.springframework.data.annotation.Id;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
 public class UserInfo {
+
+
 
 
     private String userName;
@@ -36,5 +44,6 @@ public class UserInfo {
     public String getPassword(){
         return this.password;
     }
+
 
 }
